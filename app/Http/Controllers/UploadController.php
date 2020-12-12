@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\ProcessaImportacao;
 use App\Services\PessoaService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
@@ -22,14 +23,11 @@ class UploadController extends Controller
      */
     public function uploadXml(Request $request)
     {
-        dispatch(new ProcessaImportacao($this->parseXmlToArray($request->file('arquivo'))));
+        $pathPerson = $request->file('file-person')->store('arquivo');
+        $realPathPerson = "/var/www/storage/app/" . $pathPerson;
+
+        dispatch(new ProcessaImportacao($realPathPerson));
     }
 
-    private function parseXmlToArray($file)
-    {
-        $xml = simplexml_load_file($file);
-        $json_string = json_encode($xml);
 
-        return json_decode($json_string, TRUE);
-    }
 }

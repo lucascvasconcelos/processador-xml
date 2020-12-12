@@ -35,7 +35,7 @@
                 <br>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">XML Pessoa</label>
-                    <input type="file" name="arquivo" class="form-control-file" id="arquivo" required>
+                    <input type="file" name="file-person" class="form-control-file" id="file-person" required>
                 </div>
                 <br>
                 <br>

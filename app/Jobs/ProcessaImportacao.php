@@ -14,14 +14,14 @@ class ProcessaImportacao implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $pessoas;
+    protected $realPathPersonXml;
 
     /**
      * ProcessaImportacao constructor.
      */
-    public function __construct($pessoas)
+    public function __construct($realPathPersonXml)
     {
-        $this->pessoas = $pessoas;
+        $this->realPathPersonXml = $realPathPersonXml;
     }
 
     /**
@@ -30,7 +30,15 @@ class ProcessaImportacao implements ShouldQueue
     public function handle(PessoaService $pessoaService)
     {
         echo "Iniciando processamento..." . PHP_EOL;
-        $pessoaService->populatePessoas($this->pessoas);
+        $pessoaService->populatePessoas($this->parseXmlToArray($this->realPathPersonXml));
         echo "Processamento finalizado!" . PHP_EOL;
+    }
+
+    private function parseXmlToArray($file)
+    {
+        $xml = simplexml_load_file($file);
+        $json_string = json_encode($xml);
+
+        return json_decode($json_string, TRUE);
     }
 }
