@@ -16,7 +16,7 @@
 ## Levante os containers docker
 ```
 - Entre no diretório "laradock" e rode o seguinte comando para levantar os containers docker:
-   docker-compose up -d mysql niginx
+   docker-compose up -d mysql nginx
 ```
 
 ## Entre no bash do conteiner workspace com o comando:
