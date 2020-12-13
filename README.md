@@ -19,7 +19,7 @@
 - cp env-example .env
 
 ```
-## No arquivo .env do diretório "docker" altere as porta do nginx para evitar problema com porta já utilizada, Deixe conforme ex:
+## No arquivo .env do diretório "docker" altere a porta do nginx para evitar problema com porta já utilizada, Deixe conforme ex:
 ```
 NGINX_HOST_HTTP_PORT=8081
 NGINX_HOST_HTTPS_PORT=543
