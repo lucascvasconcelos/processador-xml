@@ -29,6 +29,7 @@ class ProcessaImportacao implements ShouldQueue
 
     /**
      * @param PessoaService $pessoaService
+     * @param ShiporderService $shiporderService
      */
     public function handle(PessoaService $pessoaService, ShiporderService $shiporderService)
     {
