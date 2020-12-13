@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Jobs\ProcessaImportacao;
 use App\Services\PessoaService;
+use App\Services\ShiporderService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->app->bindMethod([ProcessaImportacao::class, 'handle'], function ($job, $app) {
-            return $job->handle($app->make(PessoaService::class));
+            return $job->handle($app->make(PessoaService::class), $app->make(ShiporderService::class));
         });
     }
 }

@@ -17,12 +17,6 @@ class Phone extends Model
 
     public $pessoa;
 
-//    public function __construct($number, $pessoa)
-//    {
-//        $this->number = $number;
-//        $this->pessoa = $pessoa;
-//    }
-
     public function pessoa()
     {
         return $this->belongsTo(Pessoa::class, 'pessoa');

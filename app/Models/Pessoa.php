@@ -23,6 +23,10 @@ class Pessoa extends Model
         return $this->hasMany(Phone::class);
     }
 
+    public function shiporder(){
+        return $this->belongsTo(Shiporder::class);
+    }
+
     /**
      * @return mixed
      */
