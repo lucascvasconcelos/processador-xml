@@ -1,6 +1,6 @@
 # Processador de xml e api rest para listagem dos dados do xml 
 
-## Requísitos
+## Requisítos
 - Docker
 
 ## Clone o projeto
