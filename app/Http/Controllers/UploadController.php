@@ -27,10 +27,11 @@ class UploadController extends Controller
      */
     public function uploadXml(Request $request)
     {
+        $fullPath = "/var/www/storage/app/";
         $pathPerson = $request->file('file-person')->store('arquivo');
-        $realPathPerson = "/var/www/storage/app/" . $pathPerson;
+        $realPathPerson = $fullPath . $pathPerson;
         $pathEncomenda = $request->file('file-encomenda')->store('arquivo');
-        $realPathEncomenda = "/var/www/storage/app/" . $pathEncomenda;
+        $realPathEncomenda = $fullPath . $pathEncomenda;
 
         dispatch(new ProcessaImportacao($realPathPerson, $realPathEncomenda));
     }

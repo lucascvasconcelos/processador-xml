@@ -83,4 +83,8 @@ class Pessoa extends Model
 
         return $this;
     }
+
+    public function getPhonesAttribute() {
+        return $this->phones();
+    }
 }
