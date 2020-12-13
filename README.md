@@ -28,12 +28,12 @@ NGINX_HOST_HTTPS_PORT=543
 ## Levante os containers docker
 ```
 - Entre no diretório "docker" e rode o seguinte comando para levantar os containers docker:
-   docker-compose up -d mysql nginx
+   sudo docker-compose up -d mysql nginx
 ```
 
 ## Entre no bash do conteiner workspace com o comando:
 ```
-- docker exec -it laradock_workspace_1 bash
+- sudo docker exec -it laradock_workspace_1 bash
 ```
 
 ## Dentro do container com o workspace execute os seguintes comandos para executar sua aplicação:
