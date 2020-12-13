@@ -23,19 +23,32 @@
         </style>
     </head>
     <body class="antialiased">
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+
+
             <form method="post" action="/upload" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">XML Encomenda</label>
-                    <input type="file" name="file-encomenda" class="form-control-file" id="file-encomenda">
+                    <label for="exampleFormControlFile1"><strong>XML Person</strong>></label>
+                    <input type="file" name="file-person" class="form-control-file" id="file-person">
                 </div>
                 <br>
                 <br>
                 <div class="form-group">
-                    <label for="exampleFormControlFile1">XML Pessoa</label>
-                    <input type="file" name="file-person" class="form-control-file" id="file-person" required>
+                    <label for="exampleFormControlFile1"><strong>XML Shiporder</strong></label>
+                    <input type="file" name="file-encomenda" class="form-control-file" id="file-encomenda">
                 </div>
                 <br>
                 <br>

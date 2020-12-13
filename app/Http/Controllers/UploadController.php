@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\XmlRequest;
 use App\Jobs\ProcessaImportacao;
 use App\Services\PessoaService;
 use App\Services\ShiporderService;
@@ -23,9 +24,9 @@ class UploadController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param XmlRequest $request
      */
-    public function uploadXml(Request $request)
+    public function uploadXml(XmlRequest $request)
     {
         $fullPath = "/var/www/storage/app/";
         $pathPerson = $request->file('file-person')->store('arquivo');
