@@ -41,7 +41,7 @@ NGINX_HOST_HTTPS_PORT=543
 - composer install
 - php artisan migrate:fresh
 - php artisan queue:work
-- Pronto!! Sua aplicação estará disponível na porta 8081. ex: localhost:8081 e api restful ex: localhost:8081/api/items 
+- Pronto!! Sua aplicação estará disponível na porta 8081. ex: localhost:8081 e api restful ex: http://localhost:8081/api/pessoas
 ```
 
 ## Gerar documentação de api:
