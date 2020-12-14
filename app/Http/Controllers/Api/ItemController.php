@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Item;
+use App\Services\ItemService;
 
-class ItemController extends BaseController
+class ItemController extends CrudController
 {
-    public function __construct()
+    public function __construct(ItemService $service)
     {
-        $this->classe = Item::class;
+        parent::__construct($service);
     }
 }

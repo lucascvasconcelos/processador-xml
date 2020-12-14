@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Shipto;
+use App\Services\ShiptoService;
 
-class ShiptoController extends BaseController
+class ShiptoController extends CrudController
 {
-    public function __construct()
+    public function __construct(ShiptoService $service)
     {
-        $this->classe = Shipto::class;
+        parent::__construct($service);
     }
 }

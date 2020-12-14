@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Shiporder;
+use App\Services\ShiporderService;
 
-class ShiporderController extends BaseController
+class ShiporderController extends CrudController
 {
-    public function __construct()
+    public function __construct(ShiporderService $service)
     {
-        $this->classe = Shiporder::class;
+        parent::__construct($service);
     }
 }

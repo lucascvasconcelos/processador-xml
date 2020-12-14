@@ -5,8 +5,9 @@ namespace App\Services;
 use App\Builders\ItemBuilder;
 use App\Builders\ShiporderBuilder;
 use App\Builders\ShiptoBuilder;
+use App\Repositorys\ShiporderRepository;
 
-class ShiporderService
+class ShiporderService extends CrudService
 {
     private $shiporderBuilder;
 
@@ -19,12 +20,15 @@ class ShiporderService
      * @param ShiporderBuilder $shiporderBuilder
      * @param ItemBuilder $itemBuilder
      * @param ShiptoBuilder $shiptoBuilder
+     * @param ShiporderRepository $repository
      */
     public function __construct(
         ShiporderBuilder $shiporderBuilder,
         ItemBuilder $itemBuilder,
-        ShiptoBuilder $shiptoBuilder
+        ShiptoBuilder $shiptoBuilder,
+        ShiporderRepository $repository
     ) {
+        parent::__construct($repository);
         $this->shiporderBuilder = $shiporderBuilder;
         $this->itemBuilder = $itemBuilder;
         $this->shiptoBuilder = $shiptoBuilder;

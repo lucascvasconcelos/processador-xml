@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Phone;
+use App\Services\PhoneService;
 
-class PhoneController extends BaseController
+class PhoneController extends CrudController
 {
-    public function __construct()
+    public function __construct(PhoneService $service)
     {
-        $this->classe = Phone::class;
+        parent::__construct($service);
     }
 }
